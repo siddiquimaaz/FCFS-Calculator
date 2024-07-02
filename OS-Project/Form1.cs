@@ -65,7 +65,7 @@ namespace OS_Project
                     int processWidth = (process.BurstTime * ganttChartPanel.Width) / totalBurstTime;
 
                     // Ensure minimum width for visibility
-                    if (processWidth < 50) processWidth = 50;
+                     processWidth = 140;
 
                     g.FillRectangle(new SolidBrush(Color.FromArgb(63, 81, 181)), currentX, 0, processWidth, processHeight);
                     g.DrawRectangle(Pens.Black, currentX, 0, processWidth, processHeight);

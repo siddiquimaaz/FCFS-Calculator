@@ -95,9 +95,10 @@
             // 
             // ganttChartPanel
             // 
-            ganttChartPanel.Location = new Point(26, 110);
+            ganttChartPanel.BackColor = Color.Transparent;
+            ganttChartPanel.Location = new Point(633, 110);
             ganttChartPanel.Name = "ganttChartPanel";
-            ganttChartPanel.Size = new Size(1501, 67);
+            ganttChartPanel.Size = new Size(894, 67);
             ganttChartPanel.TabIndex = 5;
             ganttChartPanel.WrapContents = false;
             ganttChartPanel.Paint += ganttChartPanel_Paint;
