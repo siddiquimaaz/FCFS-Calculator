@@ -17,12 +17,7 @@ namespace OS_Project
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
+        {}
 
         private bool ValidateInputs(int n, string[] processIds, string[] arrivalTimes, string[] burstTimes)
         {
@@ -65,7 +60,7 @@ namespace OS_Project
                     int processWidth = (process.BurstTime * ganttChartPanel.Width) / totalBurstTime;
 
                     // Ensure minimum width for visibility
-                     processWidth = 140;
+                    processWidth = 140;
 
                     g.FillRectangle(new SolidBrush(Color.FromArgb(63, 81, 181)), currentX, 0, processWidth, processHeight);
                     g.DrawRectangle(Pens.Black, currentX, 0, processWidth, processHeight);
@@ -89,10 +84,6 @@ namespace OS_Project
             ganttChartPanel.AutoScroll = true;
         }
 
-
-
-
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -106,7 +97,6 @@ namespace OS_Project
             path.CloseAllFigures();
             this.Region = new Region(path);
         }
-
 
         private void CalculateFCFS()
         {
@@ -143,10 +133,9 @@ namespace OS_Project
 
         private void Calculate_Click(object sender, EventArgs e)
         {
-
             ClearForm();
             int n;
-            if (!int.TryParse(NoOfProcesses.Text, out n) || n <= 0)
+            if (!int.TryParse(NoOFProccess.Value.ToString(), out n) || n <= 0)
             {
                 MessageBox.Show("Please enter a valid positive number of processes.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -204,6 +193,7 @@ namespace OS_Project
                 MessageBox.Show("No processes to display in Gantt chart.", "No Processes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void GenerateSampleData()
         {
             Random random = new Random();
@@ -231,7 +221,7 @@ namespace OS_Project
                 }
             }
 
-            NoOfProcesses.Text = numProcesses.ToString();
+            NoOFProccess.Value = numProcesses;
             ProcessIDs.Text = processIds.ToString();
             ArrivalTime.Text = arrivalTimes.ToString();
             BurstTime.Text = burstTimes.ToString();
@@ -239,10 +229,10 @@ namespace OS_Project
             MessageBox.Show("Sample data generated successfully.");
         }
 
+
         private void ganttChartPanel_Paint(object sender, PaintEventArgs e)
         { }
-
-        private void Close_Click(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
